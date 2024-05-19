@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/[p3tcc-417606]/app2', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/[p3tcc-417606]/app2']
+  - name: 'gcr.io/google-cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'app2', '--image', 'gcr.io/[PROJECT_ID]/app2', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu', '1']
+
+images:
+  - 'gcr.io/[p3tcc-417606]/app2'
