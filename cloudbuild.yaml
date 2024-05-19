@@ -7,7 +7,7 @@ steps:
     args: ['push', 'gcr.io/p3tcc-417606/app1']
   - name: 'gcr.io/google-cloud-sdk'
     entrypoint: gcloud
-args: ['run', 'deploy', 'app1', '--image', 'gcr.io/p3tcc-417606/app1', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu', '1', '--verbosity=debug']
+    args: ['run', 'deploy', 'app1', '--image', 'gcr.io/p3tcc-417606/app1', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu', '1', '--verbosity=debug']
 
 images:
   - 'gcr.io/p3tcc-417606/app1'
