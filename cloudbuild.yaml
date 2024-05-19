@@ -1,7 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
+    dir: 'app2'  # Pastikan untuk menetapkan direktori konteks build
     args: ['build', '-t', 'gcr.io/p3tcc-417606/app2', '.']
   - name: 'gcr.io/cloud-builders/docker'
+    dir: 'app2'
     args: ['push', 'gcr.io/p3tcc-417606/app2']
   - name: 'gcr.io/google-cloud-sdk'
     entrypoint: gcloud
@@ -9,5 +11,6 @@ steps:
 
 images:
   - 'gcr.io/p3tcc-417606/app2'
+
 options:
   logging: CLOUD_LOGGING_ONLY
