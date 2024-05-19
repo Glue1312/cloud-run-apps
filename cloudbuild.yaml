@@ -9,3 +9,5 @@ steps:
 
 images:
   - 'gcr.io/[p3tcc-417606]/app2'
+options:
+  logging: CLOUD_LOGGING_ONLY
